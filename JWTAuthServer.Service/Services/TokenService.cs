@@ -3,6 +3,7 @@ using JWTAuthServer.Core.DTOs;
 using JWTAuthServer.Core.Entity;
 using JWTAuthServer.Core.Services;
 using JWTAuthServer.SharedLibrary.Configurations;
+using JWTAuthServer.SharedLibrary.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -15,7 +16,7 @@ using System.Security.Cryptography;
 
 namespace JWTAuthServer.Service.Services
 {
-    class TokenService : ITokenService
+    public class TokenService : ITokenService
     {
         private readonly UserManager<UserApp> _userManager;
         private readonly CustomTokenOption _tokenOption;

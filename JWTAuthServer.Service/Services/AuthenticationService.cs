@@ -75,7 +75,7 @@ namespace JWTAuthServer.Service.Services
             return Response<ClientTokenDto>.Success(token,200);
         }
 
-        public async Task<Response<TokenDto>> CreateTokenByRefreshToken(string refreshToken)
+        public async Task<Response<TokenDto>> CreateTokenByRefreshTokenAsync(string refreshToken)
         {
             var existRefreshToken = await _userRefreshTokenService.Where(x => x.Code == refreshToken).SingleOrDefaultAsync();
 
